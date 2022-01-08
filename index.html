@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FizzBuzz</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #EFEFEF;
+                margin-top: 0px;
+                margin-left: 360px;
+                background: linear-gradient(to top right, #ada34a 0%, #6f9e48 100%);
+                min-height: calc(100vh - 48px);
+            }
+            .container{
+                background-color: #92a06c;
+                display: flex;
+
+                flex-direction: column;
+                align-items: center;
+                margin-top: 15px;
+                height: 92vh;
+                width: 50vw;
+            }
+            .para{
+              font-size: 20px;
+            }
+            input{
+                height: 7vh;
+                width: 20vw;
+                margin: 2vh;
+                border-radius: 10px;
+                border: none;
+                font-size: 20px;
+                text-align: center;
+            }
+            button{
+                margin: 2vh;
+                height: 6vh;
+                font-size: medium;
+                width: 20%;
+                background-color: rgb(218, 255, 197);
+                border-radius: 50px;
+                border: none;
+            }
+            button:hover{
+                background-color: rgb(105, 163, 72);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>FizzBuzz</h1><br>
+            <div class="container">
+                <input type="text" id="num" placeholder="Enter a number">
+                <button id="btn" onclick="FizzBuzz()">FizzBuzz</button>
+            </div>
+            <div class="para">
+                <p id="result"></p>
+            </div>
+        </div>
+        <script>
+            let result = document.getElementById('result');
+            function FizzBuzz() {
+                let num = document.getElementById('num').value
+                let x = document.getElementsByTagName("body")[0];
+                for(let i = 1; i<=num; i++){
+                    if(i % 3 ==0 && i % 5 == 0){
+                        result.innerHTML +=("<br/> FizzBuzz");
+                    }
+                    else if (i % 3 == 0) {
+                        result.innerHTML +=("<br/> Fizz");
+                    }
+                    else if( i % 5 == 0) {
+                        result.innerHTML +=("<br/> Buzz");
+                    }
+                    else {
+                        result.innerHTML +=("<br/>" + i)
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
